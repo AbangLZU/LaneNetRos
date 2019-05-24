@@ -3,8 +3,11 @@
     <arg name="image_topic" default="/kitti/camera_color_left/image_raw"/>
     <arg name="output_image" default="/lane_images"/>
     <arg name="output_lane" default="/Lane"/>
-    <arg name="weight_path" default="$(find lane_detector)/model/tusimple_lanenet/tusimple_lanenet_vgg_2018-10-19-13-33-56.ckpt-200000"/>
+    <!-- <arg name="weight_path" default="$(find lane_detector)/model/tusimple_lanenet/tusimple_lanenet_vgg_2018-10-19-13-33-56.ckpt-200000"/> -->
+    <arg name="weight_path" default="$(find lane_detector)/model/new_model/tusimple_lanenet.ckpt"/>
+
     <arg name="use_gpu" default="1"/>
+    <arg name="lane_image_topic" default="/lane_image"/>
 
     <node pkg="lane_detector" type="lanenet_node.py" name="lanenet_node" output="screen">
         <param name="image_topic" value="$(arg image_topic)" />
@@ -12,5 +15,6 @@
         <param name="output_lane" value="$(arg output_lane)" />
         <param name="weight_path" value="$(arg weight_path)" />
         <param name="use_gpu" value="$(arg use_gpu)" />
+        <param name="lane_image_topic" value="$(arg lane_image_topic)" />
     </node>
 </launch>
