@@ -2,7 +2,7 @@ easydict==1.6
 opencv_python==3.4.1.15
 glog==0.3.1
 tensorflow_gpu==1.10.0
-numpy==1.13.1
+numpy==1.21.0
 matplotlib==2.0.2
 scikit_learn==0.19.1
 tensorflow==1.10.0
